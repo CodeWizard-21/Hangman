@@ -55,7 +55,7 @@ while run_command:
             guessed_letter.append(user_input)
         
         for i in guessed_letter:
-            guessed_letter_str += i + ' '
+            guessed_letter_str += i + ', '
 
         print(hangman_figure[tries])
         print(word_completion)
