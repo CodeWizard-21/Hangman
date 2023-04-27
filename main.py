@@ -4,9 +4,8 @@ from words import words_list
 from hangman_figure import hangman_figure
 
 run_command = True
-print()
-print('Hangman!')
 
+print("")
 while run_command:
     guessed = False
     tries = 6
@@ -21,8 +20,8 @@ while run_command:
     while not guessed and tries > 0: 
         user_input = input('Guess a letter: ').lower()
         if len(user_input) > 1:
-            print('Enter a single letter dumbo!')
-            print()
+            print('Enter a single letter!')
+            print("")
             user_input = input('Guess a letter: ').lower()
         if user_input.isalpha == False:
             print('Enter an alphabet dumbo!')
@@ -34,8 +33,8 @@ while run_command:
         word_as_list = list(word_completion)
         
         if user_input in guessed_letter:
-            print()
-            print("Bruh you tried it already. Try something else")
+            print("")
+            print("You've already tried it. Try something else")
             
         elif user_input in str(question_as_array).lower():
             guessed_letter.append(user_input)
@@ -46,12 +45,12 @@ while run_command:
             word_completion = "".join(word_as_list) 
             if "_" not in word_completion:
                     guessed = True
-                    print()
+                    print("")
                     print('Congratulations! You Win! 🎉')
         
         elif user_input not in question_as_array:
             tries -= 1
-            print(f"Damnit! '{user_input}' doesn't exist in the word")
+            print(f"'{user_input}' doesn't exist in the word")
             guessed_letter.append(user_input)
         
         for i in guessed_letter:
@@ -59,21 +58,21 @@ while run_command:
 
         print(hangman_figure[tries])
         print(word_completion)
-        print() 
+        print("") 
         print(f'Words Tried: {guessed_letter_str}')
-        print()
+        print("")
         guessed_letter_str = ''
     if tries == 0:
-        print()
+        print("")
         print('You Lose 😔')
         print(f"The word was '{question.title()}'")
-        print() 
-    play = input("Type 'n' to end or any key to continue ").lower()
+        print("") 
+    play = input("Type 'e' to end or any key to continue ").lower()
     
-    if play == 'n':
+    if play == 'e':
         run_command = False
-    print()
+    print("")
     
 
 print('Alright! Stopped Your Game')
-print()
+print("")
