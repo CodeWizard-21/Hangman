@@ -67,7 +67,7 @@ while run_command:
         print('You Lose 😔')
         print(f"The word was '{question.title()}'")
         print("") 
-    play = input("Type 'e' to end or any key to continue ").lower()
+    play = input("Type 'e' to end or enter key to continue ").lower()
     
     if play == 'e':
         run_command = False
