@@ -18,6 +18,12 @@ while run_command:
     word_completion = '_' * len(question)
 
     while not guessed and tries > 0: 
+        print(hangman_figure[tries])
+        print(word_completion)
+        print("") 
+        print(f'Words Tried: {guessed_letter_str}')
+        print("")
+        guessed_letter_str = ''
         user_input = input('Guess a letter: ').lower()
         if len(user_input) > 1:
             print('Enter a single letter!')
@@ -56,18 +62,13 @@ while run_command:
         for i in guessed_letter:
             guessed_letter_str += i + ', '
 
-        print(hangman_figure[tries])
-        print(word_completion)
-        print("") 
-        print(f'Words Tried: {guessed_letter_str}')
-        print("")
-        guessed_letter_str = ''
+        
     if tries == 0:
         print("")
         print('You Lose 😔')
         print(f"The word was '{question.title()}'")
         print("") 
-    play = input("Type 'e' to end or enter key to continue ").lower()
+    play = input("Type 'e' to end or any key to continue ").lower()
     
     if play == 'e':
         run_command = False
